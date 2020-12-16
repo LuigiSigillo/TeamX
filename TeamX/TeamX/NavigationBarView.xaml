@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamX.NavigationBarView">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="5">
+            <ImageButton x:Name="user" HorizontalOptions="Start"  Aspect="AspectFit"
+                    Clicked="User_Pressed" />
+            <Label Text="Home" TextColor="White" FontAttributes="Bold" 
+                   FontSize="Large"  VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="FillAndExpand"></Label>
+            <ImageButton x:Name="Notifications" HorizontalOptions="End" 
+                         Clicked="Notification_Clicked"  />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

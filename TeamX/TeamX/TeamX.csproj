@@ -1,0 +1,195 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestingUtils\**" />
+    <EmbeddedResource Remove="TestingUtils\**" />
+    <None Remove="TestingUtils\**" />
+    <None Remove="Icons\addicon.png" />
+    <None Remove="Icons\cancel.png" />
+    <None Remove="Icons\iconfilter.png" />
+    <None Remove="Icons\notificationicon.png" />
+    <None Remove="Icons\usericon.png" />
+    <EmbeddedResource Remove="ExperienceCell.xaml" />
+    <Compile Remove="ExperienceView.xaml.cs" />
+    <None Remove="Icons\mail.png" />
+    <None Remove="Icons\linkedin.png" />
+    <None Remove="Icons\twitter.png" />
+    <None Remove="Icons\facebook.png" />
+    <None Remove="Icons\useredit.png" />
+    <None Remove="Icons\settings.png" />
+    <None Remove="Icons\user.png" />
+    <EmbeddedResource Remove="NotificationCell3 %28copy%29.xaml" />
+    <None Remove="immagini\Coding1.jpg" />
+    <None Remove="immagini\Coding2.jpg" />
+    <None Remove="immagini\Gaming.jpeg" />
+    <None Remove="immagini\cooking.jpg" />
+    <None Remove="immagini\gaming-keyboard.jpg" />
+    <None Remove="immagini\home.jpg" />
+    <None Remove="immagini\jordan.jpg" />
+    <None Remove="immagini\loading.jpg" />
+    <None Remove="immagini\loading2.jpg" />
+    <None Remove="immagini\movies.jpg" />
+    <None Remove="immagini\music.jpg" />
+    <None Remove="immagini\music2.jpg" />
+    <None Remove="immagini\other.jpg" />
+    <None Remove="immagini\poweredbygoogle.png" />
+    <None Remove="immagini\programming.jpg" />
+    <None Remove="immagini\studio.jpg" />
+    <None Remove="immagini\study.jpg" />
+    <None Remove="immagini\study2.jpg" />
+    <None Remove="immagini\loading2.jpg" />
+    <None Remove="immagini\amsung.jpg" />
+    <None Remove="immagini\basket.jpg" />
+    <None Remove="immagini\Coding1.jpg" />
+    <None Remove="immagini\Coding2.jpg" />
+    <None Remove="immagini\Gaming.jpeg" />
+    <None Remove="immagini\amsung.jpg" />
+    <None Remove="immagini\basket.jpg" />
+    <None Remove="immagini\cooking.jpg" />
+    <None Remove="immagini\gaming-keyboard.jpg" />
+    <None Remove="immagini\home.jpg" />
+    <None Remove="immagini\jordan.jpg" />
+    <None Remove="immagini\loading.jpg" />
+    <None Remove="immagini\loading2.jpg" />
+    <None Remove="immagini\movies.jpg" />
+    <None Remove="immagini\music.jpg" />
+    <None Remove="immagini\music2.jpg" />
+    <None Remove="immagini\other.jpg" />
+    <None Remove="immagini\poweredbygoogle.png" />
+    <None Remove="immagini\programming.jpg" />
+    <None Remove="immagini\studio.jpg" />
+    <None Remove="immagini\study.jpg" />
+    <None Remove="immagini\study2.jpg" />
+    <None Remove="Icons\addicon.png" />
+    <None Remove="Icons\cancel.png" />
+    <None Remove="Icons\facebook.png" />
+    <None Remove="Icons\home.png" />
+    <None Remove="Icons\iconfilter.png" />
+    <None Remove="Icons\linkedIn.png" />
+    <None Remove="Icons\newnotification.png" />
+    <None Remove="Icons\notificationicon.png" />
+    <None Remove="Icons\settings.png" />
+    <None Remove="Icons\teams.png" />
+    <None Remove="Icons\twitter.png" />
+    <None Remove="Icons\user.png" />
+    <None Remove="Icons\useredit.png" />
+    <None Remove="Icons\usericon.png" />
+    <None Remove="Icons\linkedIn.png" />
+    <None Remove="Icons\email.png" />
+    <None Remove="Icons\iconfilter.png" />
+    <None Remove="Icons\filtericon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DurianCode.PlacesSearchBar" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Refractored.XamForms.PullToRefresh" Version="2.2.3" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.180" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="MailKit" Version="2.1.2" />
+    <PackageReference Include="MimeKit" Version="2.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="StartPage.cs" />
+    <Compile Remove="AWServices\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="TeamDetailPage.xaml.cs">
+      <DependentUpon>TeamDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="TeamPage.xaml.cs">
+      <DependentUpon>TeamPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="NotificationCell1.xaml %28copy%29.cs">
+      <DependentUpon>NotificationCell3.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProfileNavigationBar.xaml.cs">
+      <DependentUpon>ProfileNavigationBar.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\addicon.png" />
+    <EmbeddedResource Include="Icons\cancel.png" />
+    <EmbeddedResource Include="Icons\notificationicon.png" />
+    <EmbeddedResource Include="Icons\usericon.png" />
+    <EmbeddedResource Include="Icons\twitter.png" />
+    <EmbeddedResource Include="Icons\facebook.png" />
+    <EmbeddedResource Include="Icons\useredit.png" />
+    <EmbeddedResource Include="Icons\settings.png" />
+    <EmbeddedResource Include="Icons\user.png" />
+    <EmbeddedResource Include="immagini\Coding1.jpg" />
+    <EmbeddedResource Include="immagini\Coding2.jpg" />
+    <EmbeddedResource Include="immagini\Gaming.jpeg" />
+    <EmbeddedResource Include="immagini\amsung.jpg" />
+    <EmbeddedResource Include="immagini\basket.jpg" />
+    <EmbeddedResource Include="immagini\cooking.jpg" />
+    <EmbeddedResource Include="immagini\gaming-keyboard.jpg" />
+    <EmbeddedResource Include="immagini\home.jpg" />
+    <EmbeddedResource Include="immagini\jordan.jpg" />
+    <EmbeddedResource Include="immagini\loading.jpg" />
+    <EmbeddedResource Include="immagini\loading2.jpg" />
+    <EmbeddedResource Include="immagini\movies.jpg" />
+    <EmbeddedResource Include="immagini\music.jpg" />
+    <EmbeddedResource Include="immagini\music2.jpg" />
+    <EmbeddedResource Include="immagini\other.jpg" />
+    <EmbeddedResource Include="immagini\poweredbygoogle.png" />
+    <EmbeddedResource Include="immagini\programming.jpg" />
+    <EmbeddedResource Include="immagini\studio.jpg" />
+    <EmbeddedResource Include="immagini\study.jpg" />
+    <EmbeddedResource Include="immagini\study2.jpg" />
+    <EmbeddedResource Include="Icons\home.png" />
+    <EmbeddedResource Include="Icons\newnotification.png" />
+    <EmbeddedResource Include="Icons\teams.png" />
+    <EmbeddedResource Include="Icons\linkedIn.png" />
+    <EmbeddedResource Include="Icons\email.png" />
+    <EmbeddedResource Include="Icons\filtericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="FiltersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\SearchBarView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamCreated_Popup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamMemberButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamsBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamsGrid.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TeamUpdated_Popup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="**/*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+</Project>

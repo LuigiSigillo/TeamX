@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TeamX.MainPage"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="20"
+                     x:Name="userStuff">
+            
+            <!-- Place new controls here -->
+            <Label Text="{Binding NickName, 
+                          StringFormat='Hello {0}'}"/>
+            <Label Text="{Binding ID, 
+                          StringFormat='You are the user number {0}'}"/>
+            <Button Text="Teams" Pressed="Teams_Pressed"/>
+
+            <Button Text="Logout" Pressed="Logout_Pressed"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

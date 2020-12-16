@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamX.FiltersPage"
+             xmlns:places="clr-namespace:DurianCode.PlacesSearchBar;assembly=PlacesSearchBar">
+    <!-- categories cities distance -->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Apply" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Padding="20">
+        <Frame CornerRadius="30" Padding="20" HasShadow="false" BorderColor="Silver" BackgroundColor="#202A30" Margin="10" HeightRequest="80">
+            
+                <StackLayout WidthRequest="300" >
+                    <Label Text="Distance" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
+                    <Slider x:Name="slider" ThumbColor="#00EA75" Maximum="50" Minimum="1"
+                        Value="{Binding Distance}" ValueChanged="Slider_ValueChanged" WidthRequest="30"/>
+                    <Label BindingContext="{x:Reference Name=slider}" TextColor="White"
+                       Text="{Binding Path=Value, StringFormat=' {0:F0} Km'}" HorizontalTextAlignment="Center"></Label>
+                </StackLayout>
+             
+            
+        </Frame>
+
+
+        <Frame CornerRadius="30" HasShadow="false" Padding="0" BorderColor="Silver" BackgroundColor="#202A30" Margin="10" HeightRequest="80">
+            
+                <StackLayout WidthRequest="250">
+                    <Label Text="City" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"></Label>
+                    <Entry x:Name="Location" BackgroundColor="Transparent" FontSize="Default" Text="{Binding City}"
+                            TextColor="White" Focused="Location_Focused"  HorizontalTextAlignment="Center"
+                            HorizontalOptions="Center" WidthRequest="200"></Entry>
+                </StackLayout>
+               
+        </Frame>
+
+
+        <Frame  CornerRadius="30" Padding="0" BorderColor="Silver" BackgroundColor="#202A30" HasShadow="false" Margin="10" HeightRequest="80">
+           
+                <StackLayout WidthRequest="250">
+                    <Label Text="Category" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"></Label>
+                    <Picker x:Name="Pick" SelectedItem="{Binding Category}" SelectedIndexChanged="Pick_SelectedIndexChanged"
+                             BackgroundColor="Transparent" TextColor="White"
+                            HorizontalOptions="Center" WidthRequest="120" />
+                </StackLayout>
+               
+        </Frame>
+
+        
+        <Frame CornerRadius="30" Padding="0" BorderColor="Silver" BackgroundColor="#202A30" HasShadow="false" Margin="10" HeightRequest="80">
+           
+                <StackLayout WidthRequest="250">
+                    <Label Text="Difficulty" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"></Label>
+                    <Picker x:Name="Pick_Diff" SelectedItem="{Binding Difficulty}" SelectedIndexChanged="Pick_SelectedIndexChanged_Diff"
+                             BackgroundColor="Transparent" TextColor="White"
+                            HorizontalOptions="Center" WidthRequest="120" />
+                </StackLayout>
+                
+        </Frame>
+        <Button Text = "Reset" CornerRadius = "20" HorizontalOptions ="Center" VerticalOptions="End"
+            WidthRequest="100" Clicked="Reset_Clicked" BackgroundColor="#CC1043"></Button>
+    </StackLayout>
+
+  
+</ContentPage>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     x:Class="TeamX.CategoryDescriptionPopup">
+    <StackLayout VerticalOptions="Center" 
+                 HorizontalOptions="Center">
+        <Frame Padding="0"
+               CornerRadius="30"
+               WidthRequest="300"
+               HeightRequest="250"
+               >
+            <StackLayout Orientation="Vertical" 
+                         HorizontalOptions="CenterAndExpand" 
+                         Padding="20"
+                         >
+                <Label Text="Write here about your skills" 
+                       TextColor="DarkSLateGray"
+                       VerticalOptions="Start"/>
+                <Editor x:Name="MessageEditor" 
+                        TextChanged="MessageEditor_TextChanged" 
+                        BackgroundColor="White" 
+                        TextColor="Gray" 
+                        VerticalOptions="CenterAndExpand"/>
+                <Button Text="Done" 
+                        Clicked="Done_Clicked"/>
+                <Button Text="Cancel" 
+                        BackgroundColor="Silver"
+                        Clicked="Cancel_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

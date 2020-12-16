@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamX.TeamPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Int32 x:Key="borderRadius">20</x:Int32>
+            <Style x:Key="imageButton" TargetType="ImageButton">
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0.95,0.95,70,70"/>
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="5,5,5,5">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0.05,1,0.95" AbsoluteLayout.LayoutFlags="All">
+                <Frame CornerRadius="30" Margin="15" Padding="0" VerticalOptions="Fill">
+                    <ScrollView VerticalOptions="StartAndExpand"
+                                Margin="0,0,0,30"
+                                AbsoluteLayout.LayoutBounds="0,0.05,1,0.85" 
+                                AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout Orientation="Vertical" BackgroundColor="White" Margin="0,0,0,10" Padding="0">
+                            <AbsoluteLayout  HeightRequest="280" HorizontalOptions="Fill">
+                                <Image x:Name="teamImage" Aspect="AspectFill" 
+                                       AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                       AbsoluteLayout.LayoutFlags="All"/>
+                                <ImageButton x:Name="Edit_button" Source="edit_grey" Clicked="OnEdit"
+                                             Style="{StaticResource imageButton}" Opacity="0.9"
+                                             AbsoluteLayout.LayoutBounds="0.95,0.05,40,40" />
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,0.4" AbsoluteLayout.LayoutFlags="All">
+                                    <BoxView BackgroundColor="Gray" Opacity="0.4"
+                                             AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                             AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.5" 
+                                                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                 VerticalOptions="Center" HorizontalOptions="Center" >
+                                        <Label Text="{Binding Name}" TextColor="White"
+                                               FontSize="24" FontAttributes="Bold" 
+                                               VerticalTextAlignment="Center"  HorizontalTextAlignment="Center"
+                                               VerticalOptions="Center"/>
+                                        <Label x:Name="CategoryLabel" 
+                                               VerticalOptions="End"
+                                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                               FontSize="15" TextColor="Silver"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </AbsoluteLayout>
+                            <StackLayout>
+                                <Frame Margin="10" Padding="40,5" CornerRadius="25" 
+                                       WidthRequest="380" HeightRequest="35" 
+                                       BorderColor="#A1A1A1" HasShadow="false">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="members" VerticalOptions="Center" HeightRequest="24" />
+                                        <Label Text="{Binding Members}" TextColor="#707070" 
+                                               HorizontalOptions="Start" VerticalOptions="Center"/>
+                                        <Label Text="{Binding City}" TextColor="#707070" 
+                                                BackgroundColor="Transparent" Margin="0"
+                                                HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                        <Image Source="location_marker" VerticalOptions="Center" 
+                                               HeightRequest="24" />
+                                    </StackLayout>
+                                </Frame>
+                                <Frame Margin="10" Padding="15" CornerRadius="30" 
+                                       BorderColor="Transparent" WidthRequest="380" 
+                                       MinimumHeightRequest="60"
+                                       HasShadow="false">
+                                    <StackLayout>
+                                        <Label Text="{Binding Description}" 
+                                               HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout HeightRequest="25"/>
+                                <StackLayout BackgroundColor="Transparent" WidthRequest="380" Padding="5">
+                                    <Label Text="Team Members" HorizontalOptions="Center" FontAttributes="Bold" Margin="0"/>
+                                    <Label Text="_____________________________________" FontAttributes="Bold"
+                                           HorizontalOptions="Center" TextColor="Silver" Margin="0"/>
+                                </StackLayout>
+                                <Frame Margin="10,0,10,10" Padding="15,5,15,15" CornerRadius="25" 
+                                       HasShadow="false" WidthRequest="380" BorderColor="Transparent">
+                                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                                        <StackLayout x:Name="teamMembersStack" Orientation="Horizontal"/>
+                                    </ScrollView>
+                                </Frame>
+                                <Label x:Name="creationDateLabel" Margin="10,10,10,0" TextColor="Gray"
+                                       HorizontalOptions="Center"/>
+                                <Label x:Name="terminationDateLabel" Margin="10,0" TextColor="#FF5050"
+                                       HorizontalOptions="Center"/>
+                                <StackLayout HeightRequest="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </StackLayout>
+            <ImageButton Source="cancel_filled.png" Style="{StaticResource imageButton}" 
+                         Clicked="Close_Clicked" IsVisible="True"
+                         AbsoluteLayout.LayoutBounds="0,0,80,80"/>
+            <ImageButton x:Name="SendRequest_button" Source="send" 
+                         Style="{StaticResource imageButton}" Clicked="OnSendRequest"/>
+            <ImageButton x:Name="RemoveUser_button" Source="signout" 
+                         Style="{StaticResource imageButton}" Clicked="RemoveUser_button_Clicked"
+                         AbsoluteLayout.LayoutBounds="0.97,0.95,80,80"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

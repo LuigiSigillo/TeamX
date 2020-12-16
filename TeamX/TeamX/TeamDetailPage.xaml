@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="TeamX.TeamDetailPage"
+            NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Int32 x:Key="borderRadius">20</x:Int32>
+            <Style x:Key="imageButton" TargetType="ImageButton">
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="Opacity" Value="7.2"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="entry" TargetType="Entry">
+                <Setter Property="TextColor" Value="Silver"/>
+                <Setter Property="BackgroundColor" Value="#5E6469"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="HasShadow" Value="false"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="5,5,5,5">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0.05,1,0.95" AbsoluteLayout.LayoutFlags="All" Padding="15" Margin="15" Orientation="Vertical">
+                <Frame Margin="15" HorizontalOptions="Center" BackgroundColor="#5E6469" CornerRadius="30" HeightRequest="40" HasShadow="false">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                        <Label x:Name="PageTitle_Label" Text="Create your team" FontSize="24" FontAttributes="Bold" TextColor="#2ADF1E" 
+                           HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout HeightRequest="20"/>
+                <ScrollView Margin="0,0,0,20">
+                    <StackLayout >
+                        <Label Text="Team Name" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Entry Text="{Binding Name}" Placeholder="Choose a name" Style="{StaticResource entry}"/>
+                        </Frame>
+                        <StackLayout HeightRequest="17"/>
+                        <Label Text="Number of members required (yourself included)" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Entry Text="{Binding MaxMembers}" Keyboard="Numeric" Style="{StaticResource entry}"/>
+                        </Frame>
+                        <StackLayout HeightRequest="17"/>
+                        <Label Text="Location (optional)" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Entry x:Name="Location" Text="{Binding City}" Focused="Location_Focused" 
+                                   Placeholder="Tap here to select a city" Style="{StaticResource entry}"/>
+                        </Frame>
+                        <StackLayout HeightRequest="17"  />
+                        <Label Text="Category" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Picker x:Name="Category_Picker" Title="Select the category" SelectedIndexChanged="OnCategorySelected" 
+                                    BackgroundColor="#5E6469" TextColor="Silver" />
+                        </Frame>
+                        <StackLayout HeightRequest="17" />
+                        <Label Text="Difficulty" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Picker x:Name="Difficulty_Picker" Title="Select the difficulty" SelectedIndexChanged="OnDifficultySelected" 
+                                    BackgroundColor="#5E6469" TextColor="Silver"/>
+                        </Frame>
+                        <StackLayout HeightRequest="17"/>
+                        <Label Text="Description" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <Editor Placeholder="I am looking for ... "
+                                    PlaceholderColor="Silver"
+                                    Text="{Binding Description}" HeightRequest="80" 
+                                    BackgroundColor="#5E6469" TextColor="#FFFFFF"/>
+                        </Frame>
+                        <StackLayout HeightRequest="17" />
+                        <Label Text="Team deadline" Style="{StaticResource label}"/>
+                        <Frame Style="{StaticResource frame}">
+                            <DatePicker x:Name="TerminationDate_Picker" Date="{Binding TerminationDate}" 
+                                        DateSelected="OnTerminationDateSelected" 
+                                        BackgroundColor="#5E6469" TextColor="Silver"/>
+                        </Frame>
+                        <StackLayout HeightRequest="20"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <ImageButton Source="cancel_filled.png" AbsoluteLayout.LayoutBounds="0,0,80,80" Style="{StaticResource imageButton}"
+                         Clicked="Close_Clicked"/>
+            <ImageButton Source="checked_filled.png" AbsoluteLayout.LayoutBounds="0.95,0.95,70,70" Style="{StaticResource imageButton}"
+                         Clicked="OnSave" />
+            <ImageButton x:Name="Remove_button" Source="trash.png" AbsoluteLayout.LayoutBounds="0.5,0.95,70,70" Style="{StaticResource imageButton}" 
+                         Clicked="OnRemove" IsVisible="False"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>

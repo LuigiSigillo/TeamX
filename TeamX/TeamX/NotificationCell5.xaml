@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TeamX.NotificationCell5">
+    <StackLayout Orientation="Horizontal" Padding="13"
+                 VerticalOptions="Center">
+            <StackLayout VerticalOptions="Center">
+            <Label  TextColor="White"
+                    Text="{Binding DescriptionLabel5}"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"/>
+            <Label TextColor="Lime" 
+                   FontAttributes="Italic"
+                   Text="{Binding Message}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   FontSize="Small"
+                   VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                <Button Text="Visit"
+                        HorizontalOptions="End"
+                        BackgroundColor="#202A30"
+                        TextColor="White"
+                        WidthRequest="80"
+                        HeightRequest="40"
+                        BorderRadius="10"
+                        Margin="1,5,10,0"
+                        Command="{Binding ViewTeam_Command}"/>
+    </StackLayout>
+</ViewCell>

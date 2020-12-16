@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamX.SearchBarView">
+  <ContentView.Content>
+        <AbsoluteLayout x:Name="abs" HeightRequest="50" >
+        <SearchBar x:Name="sbar"  CancelButtonColor="White" 
+                   Placeholder="Start searching..." 
+                   PlaceholderColor="Silver" 
+                   TextChanged="SearchBar_TextChanged" 
+                   Margin="5,0,1,0"
+                   HorizontalOptions="CenterAndExpand"
+                   AbsoluteLayout.LayoutBounds="0.05,0,0.9,50" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"       />
+            <ImageButton x:Name="filter" Clicked="Filterbutton_Clicked"
+                         Margin="0,0,5,0"
+                        AbsoluteLayout.LayoutBounds="1,0.5"   
+                        HeightRequest="50"
+                        AbsoluteLayout.LayoutFlags="PositionProportional" 
+                        BackgroundColor="Transparent" />
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

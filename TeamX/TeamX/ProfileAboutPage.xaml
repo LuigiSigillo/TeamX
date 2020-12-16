@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TeamX.ProfileAboutPage"
+             Title="About"
+             Icon="user.png">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            
+            
+            <BoxView BackgroundColor="#202A30" 
+                     AbsoluteLayout.LayoutBounds="0,0,1,0.27" 
+                     AbsoluteLayout.LayoutFlags="All" />
+            
+            
+            <Label Text="User Name" 
+                   x:Name="user_name"
+                   FontSize="15"
+                   TextColor="White" 
+                   HorizontalTextAlignment="Center" 
+                   AbsoluteLayout.LayoutBounds=".5,0.21,300,40" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" />
+            
+            <Button x:Name="UN_button"
+                    Text="UN"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    BackgroundColor="Silver"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="40"
+                   AbsoluteLayout.LayoutBounds=".5,0.06,80,80" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" />
+            
+            <ImageButton 
+                    Pressed="Edit_Pressed"
+                    x:Name="EditBtn"
+                    AbsoluteLayout.LayoutBounds="0.95,0.05,80,40" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            
+            
+            
+                
+            
+            <BoxView        BackgroundColor="#202A30" 
+                            CornerRadius="20"    
+                            AbsoluteLayout.LayoutBounds="0.5,0.94,0.9,0.5" 
+                            AbsoluteLayout.LayoutFlags="All"
+                            Color="White"/>
+            
+            
+           
+            <StackLayout Orientation="Horizontal"
+                         x:Name="ContactsStack"
+                         HorizontalOptions="Center"
+                         AbsoluteLayout.LayoutBounds="0.5,0.32,0.9,0.08" 
+                         AbsoluteLayout.LayoutFlags="All">
+                <Button Text="button"/>
+            </StackLayout>
+            
+            <Label 
+                       Text="Skills"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                    HorizontalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0.5,0.42,80,30" 
+                       AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="_________________________________________"
+                       TextColor="Silver"
+                       FontSize="15"
+                       Opacity="0.5"
+                       AbsoluteLayout.LayoutBounds="0.5,0.43,100,20" 
+                       AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            
+            <ScrollView AbsoluteLayout.LayoutBounds="0.5,0.90,0.9,0.45" 
+                         AbsoluteLayout.LayoutFlags="All">
+            <ListView BackgroundColor="Transparent"
+                      x:Name="catLV"
+                      Margin="5,0,5,0"
+                      RowHeight="70"
+                      ItemSelected="Handle_ItemSelected" 
+                      ItemsSource="{Binding ViewNotifications}"
+                      HasUnevenRows="True" 
+                      SeparatorVisibility="Default"
+                      SeparatorColor="Silver">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Category}" 
+                                  TextColor="#202A30"
+                                  Detail="{Binding Description}"
+                                  DetailColor="Gray"/>
+                    </DataTemplate>    
+                </ListView.ItemTemplate>
+                
+            </ListView>
+           </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

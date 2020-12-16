@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TeamX.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">#242F38</Color>
+            <Color x:Key="entryBackgroundColor">#202A30</Color>
+            <Color x:Key="buttonBackgroundColor">#00EA75</Color>
+            <Color x:Key="buttonTextColor">#FFFFFF</Color>
+            <Color x:Key="navigationBarColor">#00EA75</Color>
+            <Color x:Key="navigationBarTextColor">#FFFFFF</Color>
+            <x:Int32 x:Key= "buttonBorderRadius">20</x:Int32>
+            <Style TargetType="TableView" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}"/>
+            </Style>
+            <Style TargetType="EntryCell" ApplyToDerivedTypes="true">
+                <Setter Property="LabelColor" Value="#FFFFFF"/>
+            </Style>
+            <Style TargetType="Entry" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource entryBackgroundColor}"/>
+                <Setter Property="Opacity" Value="0.8"/>
+                <Setter Property="PlaceholderColor" Value="Silver"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+            </Style>
+            <Style TargetType="SearchBar" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}"/>
+                <Setter Property="Opacity" Value="0.8"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+            </Style>
+            
+            <Style TargetType="ListView" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource entryBackgroundColor}"/>
+                <Setter Property="Opacity" Value="0.8"/>
+                </Style>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}"/>
+            </Style>
+            <Style TargetType="NavigationPage" ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}"/>
+                <Setter Property="BarBackgroundColor" Value="{StaticResource navigationBarColor}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource navigationBarTextColor}"/>
+            </Style>
+            <Style TargetType="TabbedPage" ApplyToDerivedTypes="true">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource backgroundColor}"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+                <Setter Property="BorderRadius" Value="{StaticResource buttonBorderRadius}"/>
+                <Setter Property="TextColor" Value="{StaticResource buttonTextColor}"/>
+            </Style>
+            
+            <Style TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

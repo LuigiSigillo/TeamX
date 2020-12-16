@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TeamX.ProfileDetailPage"
+             Title="Edit"
+             
+             >
+    
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Save" 
+                         Icon="save.png"
+                         Clicked="OnSave" />
+        </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Frame CornerRadius="20"
+               Margin="10">
+            <TableView Intent="Form"
+                       Margin="10"
+                       BackgroundColor="White">
+                
+                 <TableRoot>
+                    <TableSection x:Name="NameTS"
+                                  Title="User"
+                                  >
+                        <EntryCell Label="Name" 
+                                   x:Name="NameEntry"
+                                   LabelColor="DarkSlateGray"
+                                  
+                                   />
+                        <EntryCell Label="Password" 
+                                   x:Name="PasswordEntry"
+                                   LabelColor="DarkSlateGray"
+                                   />
+                            
+                    </TableSection>
+                    
+                    <TableSection x:Name="ContactsTS"
+                                  Title="Contacts">
+                    </TableSection>
+                </TableRoot>
+            </TableView>  
+            </Frame>
+    </ContentPage.Content>
+</ContentPage>

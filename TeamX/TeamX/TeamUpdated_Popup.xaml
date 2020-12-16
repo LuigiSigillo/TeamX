@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamX.TeamUpdated_Popup">
+    <Frame CornerRadius="30" BackgroundColor="#5E6469" Margin="60,200">
+        <StackLayout Orientation="Vertical" BackgroundColor="Transparent" HeightRequest="250">
+            <Label Text="Completed" HorizontalOptions="Center" VerticalOptions="Start"
+                   TextColor="#8FEA78" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label Text="Your team has been succesfully updated" TextColor="#FFFFFF" FontSize="17"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <Button Text="Go to your team" CornerRadius="20" BackgroundColor="#5ADD52" Clicked="GoToTeam"
+                    HorizontalOptions="Center" VerticalOptions="End" WidthRequest="200"/>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

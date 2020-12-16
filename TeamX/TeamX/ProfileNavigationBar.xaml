@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TeamX.ProfileNavigationBar">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Fill"
+                     Padding="0,0,5,0"
+                     BackgroundColor="#00EA75">
+            
+            <ImageButton x:Name="teams" 
+                         HorizontalOptions="Start"
+                         Clicked="HomePage_Pressed"/>
+            
+                <Label Text="Profile" 
+                       TextColor="White" 
+                       FontAttributes="Bold" 
+                       FontSize="Large"  
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="FillAndExpand"/>
+            
+            
+            <ImageButton x:Name="Notifications" 
+                         HorizontalOptions="End" 
+                         Padding="0,0,3,0"
+                         Clicked="Notification_Clicked"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
