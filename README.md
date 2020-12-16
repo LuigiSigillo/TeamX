@@ -1,4 +1,6 @@
 # TeamX
+Teaming up made easy. 
+
 Project done for the bachelor degree (February 2019) for the Mobile computing class.
 ## Authors
 
